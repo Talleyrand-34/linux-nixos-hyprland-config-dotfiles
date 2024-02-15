@@ -3,13 +3,13 @@
 {
   # Select internationalisation properties.
   services.xserver = {
-    layout = "us,ua,ru";
+    layout = "us,es,ru";
     xkbOptions = "grp:alt_shift_toggle";
   };
   
   i18n.supportedLocales = [
     "en_US.UTF-8/UTF-8"
-    "uk_UA.UTF-8/UTF-8"
+    "us_ES.UTF-8/UTF-8"
     "ru_RU.UTF-8/UTF-8"
   ];
   
@@ -24,7 +24,7 @@
     LC_NUMERIC = "en_US.UTF-8";
     LC_PAPER = "en_US.UTF-8";
     LC_TELEPHONE = "en_US.UTF-8";
-    LC_TIME = "en_US.UTF-8";
+    LC_TIME = "es_ES.UTF-8";
   };
 
   environment.systemPackages = with pkgs; [
