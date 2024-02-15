@@ -4,8 +4,8 @@ clock
 screenshots
 
 effect-blur=11x11
-effect-compose=1100,10;/home/xnm/.config/swaylock/rebecca.png
-effect-compose=20,0;40%x100%;/home/xnm/.config/swaylock/lucy.png
+effect-compose=1100,10;/home/asada/.config/swaylock/rebecca.png
+effect-compose=20,0;40%x100%;/home/asada/.config/swaylock/lucy.png
 font=JetBrains Mono
 indicator-radius=80
 indicator-thickness=8

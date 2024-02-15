@@ -8,37 +8,36 @@
     [ (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
-  boot.initrd.availableKernelModules = [ "xhci_pci" "nvme" "usb_storage" "sd_mod" ];
+  boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "nvme" "usbhid" "sd_mod" "sdhci_pci" ];
   boot.initrd.kernelModules = [ ];
-  boot.blacklistedKernelModules = [ "nouveau" "nvidia" ]; # Disable NVIDIA video cards
-  boot.kernelParams = [ "i915.enable_guc=2" ];
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
 
- # FIXME: Use your auto-generated `hardware-configuration.nix` instead of this file, you can tweak your `hardware-configuration.nix` using snippets from this file
+  fileSystems."/" =
+    { device = "/dev/disk/by-uuid/af4f2f7b-59fc-466b-92bc-d12ea3f4d6fd";
+      fsType = "ext4";
+    };
+
+  boot.initrd.luks.devices."luks-ae624fe0-b0ae-4ed4-a57a-b3068249c126".device = "/dev/disk/by-uuid/ae624fe0-b0ae-4ed4-a57a-b3068249c126";
+
+  fileSystems."/boot" =
+    { device = "/dev/disk/by-uuid/BDF4-58EE";
+      fsType = "vfat";
+    };
+
+  swapDevices =
+    [ { device = "/dev/disk/by-partuuid/d0c0b6fc-ff42-cf48-ada6-6233b3b9a74b"; 
+        randomEncryption.enable = true;}
+    ];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
   # (the default) this is the recommended approach. When using systemd-networkd it's
   # still possible to use this option, but it's recommended to use it in conjunction
   # with explicit per-interface declarations with `networking.interfaces.<interface>.useDHCP`.
   networking.useDHCP = lib.mkDefault true;
-  # networking.interfaces.wlp0s20f3.useDHCP = lib.mkDefault true;
+  # networking.interfaces.enp4s0.useDHCP = lib.mkDefault true;
+  # networking.interfaces.wlp3s0.useDHCP = lib.mkDefault true;
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
-  
-  nixpkgs.config.packageOverrides = pkgs: {
-    vaapiIntel = pkgs.vaapiIntel.override { enableHybridCodec = true; };
-  };
-  hardware.opengl = {
-    enable = true;
-    driSupport = true;
-    extraPackages = with pkgs; [
-      intel-compute-runtime
-      intel-media-driver # LIBVA_DRIVER_NAME=iHD
-      vaapiIntel         # LIBVA_DRIVER_NAME=i965 (older but works better for Firefox/Chromium)
-      vaapiVdpau
-      libvdpau-va-gl
-    ];
-  };
 }

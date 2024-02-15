@@ -1,9 +1,9 @@
 [user]
-	email = artem.shv@proton.me
-	name = xnm
-[credential "https://github.com"]
-	helper = 
-	helper = !/run/current-system/sw/bin/gh auth git-credential
-[credential "https://gist.github.com"]
-	helper = 
-	helper = !/run/current-system/sw/bin/gh auth git-credential
+	email = talleyrand-34@tutanota.com
+	name = Talleyrand-34
+; [credential "https://github.com"]
+; 	helper = 
+; 	helper = !/run/current-system/sw/bin/gh auth git-credential
+; [credential "https://gist.github.com"]
+; 	helper = 
+; 	helper = !/run/current-system/sw/bin/gh auth git-credential

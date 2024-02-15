@@ -2,9 +2,9 @@
 
 {
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.xnm = {
+  users.users.asada = {
     isNormalUser = true;
-    description = "xnm";
+    description = "asada";
     extraGroups = [ "networkmanager" "input" "wheel" "video" "audio" "tss" ];
     shell = pkgs.fish;
     packages = with pkgs; [

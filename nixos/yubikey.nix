@@ -4,20 +4,20 @@
   services.udev.packages = [ pkgs.yubikey-personalization ];
 
   programs.gnupg.agent = {
-    enable = true;
-    enableSSHSupport = true;
+    enable = false;
+    enableSSHSupport = false;
   };
 
   # FIXME Don't forget to create an authorization mapping file for your user (https://nixos.wiki/wiki/Yubikey#pam_u2f)
   security.pam.u2f = {
-    enable = true;
-    cue = true;
+    enable = false;
+    cue = false;
     control = "sufficient";
   };
 
   security.pam.services = {
-    greetd.u2fAuth = true;
-    sudo.u2fAuth = true;
-    swaylock.u2fAuth = true;
+    greetd.u2fAuth = false;
+    sudo.u2fAuth = false;
+    swaylock.u2fAuth = false;
   };
 }
