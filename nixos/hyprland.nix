@@ -9,6 +9,7 @@
   environment.systemPackages = with pkgs; [
     wezterm
     cool-retro-term
+    alacritty
 
     starship
     helix

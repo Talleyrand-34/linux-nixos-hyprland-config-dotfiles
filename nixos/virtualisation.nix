@@ -34,6 +34,9 @@
 
     distrobox
     qemu
+    lxd
+    lxc
+    virt-manager
 
     podman-compose
     podman-tui

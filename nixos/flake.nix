@@ -42,7 +42,7 @@
         # ./open-ssh.nix
         ./firewall.nix
         ./dns.nix
-        # ./vpn.nix
+        ./vpn.nix
         ./users.nix
         ./virtualisation.nix
         ./programming-languages.nix

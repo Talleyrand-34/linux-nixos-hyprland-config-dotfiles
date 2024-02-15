@@ -7,5 +7,9 @@
 
   environment.systemPackages = with pkgs; [
     mullvad-closest
+    #vpn
+    openvpn
+    mullvad-vpn
+    mullvad-browser
   ];
 }

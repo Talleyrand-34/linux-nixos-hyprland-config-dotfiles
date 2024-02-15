@@ -3,38 +3,38 @@
 {
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
-  # programs.mtr.enable = true;
+  # programs.mtr.enable = false;
   # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
+  #   enable = false;
+  #   enableSSHSupport = false;
   # };
 
   # Enable Security Services
   users.users.root.hashedPassword = "!";
   security.tpm2 = {
-    enable = true;
-    pkcs11.enable = true;
-    tctiEnvironment.enable = true;
+    enable = false;
+    pkcs11.enable = false;
+    tctiEnvironment.enable = false;
   };
   security.apparmor = {
-    enable = true;
+    enable = false;
     packages = with pkgs; [
       apparmor-utils
       apparmor-profiles
     ];
   };
-  services.fail2ban.enable = true;
+  services.fail2ban.enable = false;
   security.pam.services.swaylock = {};
-  # security.polkit.enable = true;
-  programs.browserpass.enable = true;
+  # security.polkit.enable = false;
+  programs.browserpass.enable = false;
   services.clamav = {
-    daemon.enable = true;
-    updater.enable = true;
+    daemon.enable = false;
+    updater.enable = false;
     updater.interval = "daily"; #man systemd.time
     updater.frequency = 12;
   };
   programs.firejail = {
-    enable = true;
+    enable = false;
     wrappedBinaries = { 
       mpv = {
         executable = "${lib.getBin pkgs.mpv}/bin/mpv";

@@ -51,5 +51,57 @@
     rsclock
     cava
     figlet
+    #mine
+     #terminal utilities
+    btop
+    vim
+    ripgrep
+    zellij
+    parallel
+    atuin
+    gitui
+    ncdu
+    wget
+    curl
+    bat
+    php
+    thefuck
+    wavemon
+    bottom
+    zoxide
+    browsh
+    fd
+    delta
+    tokei
+    kondo
+    mprocs
+    pkg-config
+    tor
+    nmap
+    tor-browser-bundle-bin
+    iftop
+    lazygit
+    gnupg
+    parallel
+    xsel
+    distrobox
+    zip
+    unzip
+    tree
+    p7zip
+    _7zz
+    ranger
+    curl
+    appimage-run
+    parallel
+    acpi    
+    wget
+    btrfs-progs
+       emacs
+    neovim
+    grsync
+    fd
+    flatpak
+    gnome.gnome-software
   ];
 }

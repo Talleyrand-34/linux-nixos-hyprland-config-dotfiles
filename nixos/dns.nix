@@ -3,15 +3,19 @@
 {
   # Enable Encrypted DNS
   networking = {
-    nameservers = [ "127.0.0.1" "::1" ];
+    # nameservers = [ "127.0.0.1" "::1" ];
     # If using dhcpcd:
-    dhcpcd.extraConfig = "nohook resolv.conf";
+    #wdhcpcd.extraConfig = "nohook resolv.conf";
     # If using NetworkManager:
-    networkmanager.dns = "none";
+    #networkmanager.dns = "pnone";
+    networkmanager = {
+      enable = true;
+      dns = "default";
+    };
   };
 
   services.dnscrypt-proxy2 = {
-    enable = true;
+    enable = false;
     settings = {
       ipv6_servers = true;
       require_dnssec = true;
@@ -30,7 +34,7 @@
     };
   };
 
-  systemd.services.dnscrypt-proxy2.serviceConfig = {
-    StateDirectory = "dnscrypt-proxy";
-  };
+  #systemd.services.dnscrypt-proxy2.serviceConfig = {
+    #StateDirectory = "dnscrypt-proxy";
+  #};
 }

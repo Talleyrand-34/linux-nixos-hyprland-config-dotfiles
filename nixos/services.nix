@@ -9,6 +9,12 @@
   # Enable Services
   services.geoclue2.enable = true;
   programs.direnv.enable = true;
+  # programs.direnv = {
+  #   enable = true;
+  #   enableBashIntegration = true; # see note on other shells below
+  #   nix-direnv.enable = true;
+  # };
+
   services.upower.enable = true;
   programs.fish.enable = true;
   programs.dconf.enable = true;
@@ -23,6 +29,9 @@
   services.fwupd.enable = true;
   services.auto-cpufreq.enable = true;
   # services.udev.packages = with pkgs; [ gnome.gnome-settings-daemon ];
+
+  services.flatpak.enable = true;
+
 
   environment.systemPackages = with pkgs; [
     at-spi2-atk
