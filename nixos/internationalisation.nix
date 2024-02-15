@@ -9,7 +9,7 @@
   
   i18n.supportedLocales = [
     "en_US.UTF-8/UTF-8"
-    "us_ES.UTF-8/UTF-8"
+    "es_ES.UTF-8/UTF-8"
     "ru_RU.UTF-8/UTF-8"
   ];
   
