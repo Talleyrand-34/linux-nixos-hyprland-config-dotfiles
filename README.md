@@ -25,7 +25,18 @@
 - [Yubikey on NixOS](#-yubikey-on-nixos)
 - [License](#-license)
 
-## 📖 About
+## 📖 About Talleyrand's repo
+I like this dotfiles but I want to add more things, each branch explore differents aspect in which the original repo can improve. Here is the current set of branches:
+
+- **main**: The original
+- **asada**: What I use
+- **nixify-home**: All the dotfiles in /home integrated in nixos conf
+- **exp-json**: add json to only modify once variable to change user environment vars as username, hostname....
+- **bootloader**: Use GRUB bootloader
+- **sops**: Secrets Management
+
+
+## 📖 About XNM1
 
 This repository houses my NixOS Linux ❄️ flake configuration, featuring the Hyprland window manager and adorned with the stylish Catppuccin Macchiato theme. I rely on this setup as my daily driver for work and programming, primarily in Rust 🦀. Feel free to utilize it in its entirety or borrow specific components for your own configuration.
 
