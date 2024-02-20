@@ -17,7 +17,7 @@
         "on-click": "activate",  
         "format": "{icon}",
         "format-icons": {
-            // "1": "󰲠",
+                    // "1": "󰲠",
             // "2": "󰲢",
             // "3": "󰲤",
             // "4": "󰲦",
@@ -27,6 +27,17 @@
             // "8": "󰲮",
             // "9": "󰲰",
             // "10": "󰿬",
+
+            "1": "󰲠",
+            "2": "󰲢",
+            "3": "󰲤",
+            "4": "󰲦",
+            "5": "󰲨",
+            "6": "󰲪",
+            "7": "󰲬",
+            "8": "󰲮",
+            "9": "󰲰",
+            "10": "󰿬",
 
             "active": "",
             "default": "",
@@ -244,20 +255,21 @@
 
     // Modules Config
     "hyprland/window": {
-        "format": "👼 {title} 😈",
-        "max-length": 50,
+        "format": "{title}",
+        "max-length": 90,
     },
 
     "hyprland/language": {
         "format-en": "🇺🇸 ENG (US)",
         "format-uk": "🇺🇦 UKR",
         "format-ru": "🇷🇺 RUS",
+        "format-es": "🇪🇸 ES",
         "on-click": "hyprctl switchxkblayout at-translated-set-2-keyboard next",
     },
 
     "keyboard-state": {
         "capslock": true,
-        // "numlock": true,
+        "numlock": true,
         "format": "{name} {icon}",
         "format-icons": {
             "locked": "",
